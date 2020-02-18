@@ -8,8 +8,8 @@ class ProcessBuilderPython {
 	public static void main(String[] args) throws Exception {
 		
 		List<String> command=null;
-		  n = args[1];
-		  type = args[0];
+		n = args[0];
+		type = args[1];
 		pythonScript(command);      //Installing python packages and running python script
 	
 	}
@@ -36,9 +36,9 @@ class ProcessBuilderPython {
 		command.add("python");
 		command.add("apache-fake-log-gen.py");
 		command.add("-n");
-		command.add("150");
+		command.add(n);
 		command.add("-o");
-		command.add("LOG");
+		command.add(type);
 		pb = new ProcessBuilder(command); 
 		process = pb.start();   // starting the process
 
